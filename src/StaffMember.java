@@ -3,6 +3,16 @@ import java.util.LinkedList;
 
 public class StaffMember 
 {
+	public LinkedList<String> position;
+	public LinkedList<String> locationsAbleToWork;
+	public LinkedList<Date> availableTimeSlots;
+	public boolean requestedEvent;
+	public int consecutiveSkips;
+	public boolean isSuspended;
+	public int rating;
+	public int experience;
+	private double weight;
+	
 	public StaffMember(LinkedList<String> inPosition, LinkedList<String> inLocationsAbleToWork, 
 			LinkedList<Date> inAvailableTimeSlots, boolean inIsRequested, int inConsecutiveSkips, 
 			boolean inIsSuspended, int inRating, int inExperience)
@@ -17,23 +27,6 @@ public class StaffMember
 		experience = inExperience;
 		this.setWeight();
 	}
-	public LinkedList<String> position;
-	
-	public LinkedList<String> locationsAbleToWork;
-	
-	public LinkedList<Date> availableTimeSlots;
-	
-	public boolean isRequested;
-	
-	public int consecutiveSkips;
-	
-	public boolean isSuspended;
-	
-	public int rating;
-	
-	public int experience;
-	
-	private double weight;
 	
 	public void setWeight()
 	{
@@ -44,4 +37,5 @@ public class StaffMember
 	{
 		return weight;
 	}
+	
 }
