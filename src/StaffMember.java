@@ -13,18 +13,18 @@ public class StaffMember
 	public int experience;
 	private double weight;
 	
-	public StaffMember(int employeeID, String[] inPosition, String[] inLocationsAbleToWork, 
-			Date[] inAvailableTimeSlots, boolean inIsRequested, int inConsecutiveSkips, 
-			boolean inIsSuspended, int inRating, int inExperience) {	
+	public StaffMember(int employeeID, String[] position, String[] locationsAbleToWork, 
+			Date[] availableTimeSlots, boolean requestedEvent, int consecutiveSkips, 
+			boolean isSuspended, int rating, int experience) {	
 		this.employeeID = employeeID;
-		position = inPosition;
-		locationsAbleToWork = inLocationsAbleToWork;
-		availableTimeSlots = inAvailableTimeSlots;
-		isRequested = inIsRequested;
-		consecutiveSkips = inConsecutiveSkips;
-		isSuspended = inIsSuspended;
-		rating = inRating;
-		experience = inExperience;
+		this.position = position;
+		this.locationsAbleToWork = locationsAbleToWork;
+		this.availableTimeSlots = availableTimeSlots;
+		this.requestedEvent = requestedEvent;
+		this.consecutiveSkips = consecutiveSkips;
+		this.isSuspended = isSuspended;
+		this.rating = rating;
+		this.experience = experience;
 		this.setWeight();
 	}
 
