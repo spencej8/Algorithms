@@ -5,17 +5,17 @@ public class Executable
 		// Implement here.
 	}
 
-	public void getEventStaff(Event e, StaffList sl) { 
+	public void getEventStaff(Event e, StaffMember[] staffList) { 
 		// Implement here.
 	}
 
-	public void insertMember(LinkedList<staffMember> list, StaffMember s, int length, int required) {
-		StaffMember temp = list.peek();
+	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int length, int required) {
+		//StaffMember temp = list.peek();
 		int location;
 		for (int i = 0; i < list.size(); i++) {
-			if (isPreferred(s, list[i++])) {
-				location++;
-			}
+			// if (isPreferred(s, list[i++])) {
+			// 	location++;
+			// }
 		}
 	}
 	
