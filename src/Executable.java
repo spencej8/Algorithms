@@ -26,6 +26,13 @@ public class Executable extends LinkedList
 		}
 		
 	}
+
+	// COMPLETE!
+	public double calculateWeight(StaffMember s, double rateValue, double expValue, double skipValue) {
+		double newWeight = (s.getRating() * rateValue) + (s.getExperience() * expValue) + (s.getConsecutiveSkips() * skipValue);
+		s.setWeight(newWeight);
+		return s.getWeight();
+	}
 	
 	// COMPLETE!
 	public boolean isAvailable(Event e, StaffMember s) {
