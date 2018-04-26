@@ -25,7 +25,6 @@ public class StaffMember
 		this.isSuspended = isSuspended;
 		this.rating = rating;
 		this.experience = experience;
-		this.setWeight();
 	}
 
 	public int getEmployeeID() {
@@ -78,12 +77,12 @@ public class StaffMember
 		return experience;
 	}
 
-	private double setWeight() {
-		return this.weight = (this.rating * 10) + (this.experience * 7) + (this.consecutiveSkips * 3);
+	public void setWeight(double newWeight) {
+		this.weight = newWeight;
 	}
 	
 	public double getWeight() {
-		return setWeight();
+		return weight;
 	}
 
 }
