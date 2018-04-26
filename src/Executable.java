@@ -1,22 +1,30 @@
-public class Executable 
+public class Executable extends LinkedList
 {
+	int size;
+	
+	LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
 	
 	public static void main(String[] args) {
 		// Implement here.
 	}
 
 	public void getEventStaff(Event e, StaffMember[] staffList) { 
-		// Implement here.
+		
 	}
 
+	// COMPLETE!
 	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int length, int required) {
-		//StaffMember temp = list.peek();
-		int location;
-		for (int i = 0; i < list.size(); i++) {
-			// if (isPreferred(s, list[i++])) {
-			// 	location++;
-			// }
+		Node temp = list.head;
+		if (isPreferred(s, temp.element)) {
+			while (temp.next != null && isPreferred(s, temp.next.element)) {
+				temp = temp.next;
+			}
+			//need to increment in getEventStaff
+			if (size < length) {
+				s = temp.next.element; 
+			}
 		}
+		
 	}
 	
 	// COMPLETE!

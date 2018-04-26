@@ -1,71 +1,41 @@
+import java.util.NoSuchElementException;
+
 public class LinkedList<E> {
 
-    private Node head;
-    private Node tail;
-    private int size;
+    Node head;
 
     public LinkedList() {
-        size = 0;
-    }
-
-    public int size() {
-        return size;
+        head = null;
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return head == null;
     }
 
-    public void addToHead(E element) {
-        Node temp = new Node(element, head, null);
-
-        if (head != null)
-            head.prev = temp;
-        head = temp;
-
-        if (tail == null)
-            tail = temp;
-        size++;
+    public void addToHead(StaffMember element) {
+        head = new Node(element, head);
+    }
+    
+    public Node getHead() {
+    	
+    	return head;
     }
 
-    public void removeHead() {
-        if (size != 0) {
-            head = head.next;
-            head.prev = null;
-            size--;
-        }
+    public Object removeHead() {
+        Node temp = getHead();
+        head = head.next;
+        return temp;
     }
-
-    public void addToTail(E element) {
-        Node temp = new Node(element, null, tail);
-
-        if (tail != null)
-            tail.next = temp;
-        tail = temp;
-
-        if (head == null)
-            head = temp;
-        size++;
-    }
-
-    public void removeTail() {
-        if (size != 0) {
-            tail = tail.prev;
-            tail.next = null;
-            size--;
-        }
-    }
+    
 
     // Node class within LinkedList:
-    public class Node {
-        E element;
-        Node next;
-        Node prev;
+    public class Node<E> {
+        StaffMember element;
+        Node<Object> next;
 
-        public Node(E element, Node next, Node prev) {
+        public Node(StaffMember element, Node next) {
             this.element = element;
             this.next = next;
-            this.prev = prev;
         }
     }
     
