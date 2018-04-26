@@ -21,9 +21,9 @@ public class Executable
 	
 	// COMPLETE!
 	public boolean isAvailable(Event e, StaffMember s) {
-		if (!s.isSuspended) {
+		if (!s.getIsSuspended()) {
 			if (s.getAvailableTimeSlots(e.getTimeOfEvent()) == true) {
-				if (s.getLocationsAbleToWork(e.location) == true)
+				if (s.getLocationsAbleToWork(e.getLocation()) == true)
 					return true;
 				else
 					return false;

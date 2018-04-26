@@ -2,12 +2,12 @@ import java.util.Date;
 
 public class Event 
 {
-	public Date timeOfEvent;
-	public String location;
-	public int numOfBartendersNeeded;
-	public int numOfServersNeeded;
-	public int numOfServerAssistantsNeeded;
-	public int numOfCooksNeeded;
+	private Date timeOfEvent;
+	private String location;
+	private int numOfBartendersNeeded;
+	private int numOfServersNeeded;
+	private int numOfServerAssistantsNeeded;
+	private int numOfCooksNeeded;
 	
 	public Event(Date timeOfEvent, String location, int numOfBartendersNeeded, 
 		int numOfServersNeeded, int numOfServerAssistantsNeeded, int numOfCooksNeeded) {

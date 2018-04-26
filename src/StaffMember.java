@@ -2,15 +2,15 @@ import java.util.Date;
 
 public class StaffMember 
 {
-	public int employeeID;
-	public String[] position;
-	public String[] locationsAbleToWork;
-	public Date[] availableTimeSlots;
-	public boolean requestedEvent;
-	public int consecutiveSkips;
-	public boolean isSuspended;
-	public int rating;
-	public int experience;
+	private int employeeID;
+	private String[] position;
+	private String[] locationsAbleToWork;
+	private Date[] availableTimeSlots;
+	private boolean requestedEvent;
+	private int consecutiveSkips;
+	private boolean isSuspended;
+	private int rating;
+	private int experience;
 	private double weight;
 	
 	public StaffMember(int employeeID, String[] position, String[] locationsAbleToWork, 
