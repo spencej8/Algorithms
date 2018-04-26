@@ -42,5 +42,5 @@ public class Event
 	public int getNumOfCooksNeeded() {
 		return numOfCooksNeeded;
 	}
-	
+
 }
