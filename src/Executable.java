@@ -1,8 +1,6 @@
-public class Executable extends LinkedList
+public class Executable extends LinkedList<StaffMember>
 {
-	int size;
-	
-	LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
+	public LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
 	
 	public static void main(String[] args) {
 		// Implement here.
@@ -13,14 +11,14 @@ public class Executable extends LinkedList
 	}
 
 	// COMPLETE!
-	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int length, int required) {
-		Node temp = list.head;
+	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int listLength, int requiredStaff) {
+		Node temp = list.getHead();
 		if (isPreferred(s, temp.element)) {
 			while (temp.next != null && isPreferred(s, temp.next.element)) {
 				temp = temp.next;
 			}
 			//need to increment in getEventStaff
-			if (size < length) {
+			if (list.getSize() < listLength) {
 				s = temp.next.element; 
 			}
 		}
