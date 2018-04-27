@@ -2,6 +2,7 @@ import java.util.Date;
 
 public class StaffMember 
 {
+	public static final String WAITER = "Waiter", BARTENDER = "Bartender", COOK = "Cook", ASSISTANT = "Assistant";
 	private int employeeID;
 	private String[] position;
 	private String[] locationsAbleToWork;
@@ -12,7 +13,10 @@ public class StaffMember
 	private int rating;
 	private int experience;
 	private double weight;
-	
+	public StaffMember()
+	{
+		this(0, new String[0], new String[0], new Date[0], false, 0, false, 0, 0);
+	}
 	public StaffMember(int employeeID, String[] position, String[] locationsAbleToWork, 
 			Date[] availableTimeSlots, boolean requestedEvent, int consecutiveSkips, 
 			boolean isSuspended, int rating, int experience) {	
