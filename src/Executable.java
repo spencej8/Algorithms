@@ -1,7 +1,6 @@
 public class Executable extends LinkedList<StaffMember>
 {
 	public static final double RATE = 7, EXP = 5, SKIP = 3;
-	public LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> waitersChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> bartendersChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> cooksChosen = new LinkedList<StaffMember>();
@@ -55,6 +54,46 @@ public class Executable extends LinkedList<StaffMember>
 				}
 			}
 		}
+		Node wnode = waitersChosen.getHead();
+		Node bnode = bartendersChosen.getHead();
+		Node cnode = cooksChosen.getHead();
+		Node anode = assistantsChosen.getHead();
+		System.out.println("Waiters: ");
+		for(int i = 0; i < numWaiters; i++)
+		{
+			if(wnode.next != null)
+			{
+				System.out.println(wnode.next.element);
+				wnode = wnode.next;
+			}
+		}
+		System.out.println("Bartenders: ");
+		for(int i = 0; i < numBartenders; i++)
+		{
+			if(bnode.next != null)
+			{
+				System.out.println(bnode.next.element);
+				bnode = bnode.next;
+			}
+		}
+		System.out.println("Cooks: ");
+		for(int i = 0; i < numCooks; i++)
+		{
+			if(cnode.next != null)
+			{
+				System.out.println(cnode.next.element);
+				cnode = cnode.next;
+			}
+		}
+		System.out.println("Assistants: ");
+		for(int i = 0; i < numAssistants; i++)
+		{
+			if(anode.next != null)
+			{
+				System.out.println(anode.next.element);
+				anode = anode.next;
+			}
+		}
 		System.out.println("Done");
 	}
 
@@ -64,6 +103,16 @@ public class Executable extends LinkedList<StaffMember>
 		if (isPreferred(s, temp.element)) {
 			while (temp.next != null && isPreferred(s, temp.next.element)) {
 				temp = temp.next;
+			}
+			if(temp.next != null)
+			{
+				Node toAdd = new Node(s, temp.next);
+				temp.next = toAdd;
+			}
+			else
+			{
+				Node toAdd = new Node(s, null);
+				temp.next = toAdd;
 			}
 			//need to increment in getEventStaff
 			if (list.getSize() < listLength) {

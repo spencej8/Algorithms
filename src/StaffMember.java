@@ -17,6 +17,11 @@ public class StaffMember
 	{
 		this(0, new String[0], new String[0], new Date[0], false, 0, false, 0, 0);
 	}
+	@Override
+	public String toString()
+	{
+		return "ID: " + employeeID + " Skips: " + consecutiveSkips + " Rating: " + rating + " Experience: " + experience + " Weight: " + weight;
+	}
 	public StaffMember(int employeeID, String[] position, String[] locationsAbleToWork, 
 			Date[] availableTimeSlots, boolean requestedEvent, int consecutiveSkips, 
 			boolean isSuspended, int rating, int experience) {	
@@ -88,5 +93,4 @@ public class StaffMember
 	public double getWeight() {
 		return weight;
 	}
-
 }

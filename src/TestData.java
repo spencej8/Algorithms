@@ -14,20 +14,20 @@ public class TestData
 		Date timeSlot = new Date();
 		Date[] inTimeSlots = { new Date(), timeSlot };
 		//Easy 4 person test
-		StaffMember[] inTestStaff = { new StaffMember(10, inPosition, inLocations, inTimeSlots, false, 0, false, 5, 5), 
-				new StaffMember(10, inPosition1, inLocations, inTimeSlots, false, 0, false, 5, 5), 
-				new StaffMember(10, inPosition2, inLocations, inTimeSlots, false, 0, false, 5, 5),
-				new StaffMember(10, inPosition3, inLocations, inTimeSlots, false, 0, false, 5, 5)};
+		StaffMember[] inTestStaff = { new StaffMember(10, inPosition, inLocations, inTimeSlots, false, 0, false, 50, 5), 
+				new StaffMember(10, inPosition1, inLocations, inTimeSlots, false, 0, false, 50000, 5), 
+				new StaffMember(10, inPosition2, inLocations, inTimeSlots, false, 0, false, 5000, 5),
+				new StaffMember(10, inPosition3, inLocations, inTimeSlots, false, 0, false, 500, 5)};
 		
 		//20 person test
 		//16 people needed
 		//all 20 requested and available
 		//4 of each position needed, 5 of each position in list
 		StaffMember[] testStaff2 = { new StaffMember(5, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+				new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 50, 5),
 				new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 5000, 5),
+				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 50000, 5),
 				new StaffMember(6, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(16, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(26, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
