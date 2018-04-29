@@ -34,22 +34,26 @@ public class Executable extends LinkedList<StaffMember>
 					if(employee.getPosition(StaffMember.WAITER))
 					{
 						insertMember(waitersChosen, employee, waitersChosen.size, e.getNumOfServersNeeded());
-						numWaiters++;
+						System.out.println(employee.getEmployeeID());
+						waitersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.BARTENDER))
 					{
 						this.insertMember(bartendersChosen, employee, bartendersChosen.size, e.getNumOfBartendersNeeded());
-						numBartenders++;
+						System.out.println(employee.getEmployeeID());
+						bartendersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.COOK))
 					{
 						this.insertMember(cooksChosen, employee, cooksChosen.size, e.getNumOfCooksNeeded());
-						numCooks++;
+						System.out.println(employee.getEmployeeID());
+						cooksChosen.size++;
 					}
 					else
 					{
 						this.insertMember(assistantsChosen, employee, assistantsChosen.size, e.getNumOfServerAssistantsNeeded());
-						numAssistants++;
+						System.out.println(employee.getEmployeeID());
+						assistantsChosen.size++;
 					}
 				}
 			}
@@ -59,7 +63,7 @@ public class Executable extends LinkedList<StaffMember>
 		Node cnode = cooksChosen.getHead();
 		Node anode = assistantsChosen.getHead();
 		System.out.println("Waiters: ");
-		for(int i = 0; i < numWaiters; i++)
+		for(int i = 0; i < waitersChosen.size; i++)
 		{
 			if(wnode.next != null)
 			{
@@ -68,7 +72,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Bartenders: ");
-		for(int i = 0; i < numBartenders; i++)
+		for(int i = 0; i < bartendersChosen.size; i++)
 		{
 			if(bnode.next != null)
 			{
@@ -77,7 +81,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Cooks: ");
-		for(int i = 0; i < numCooks; i++)
+		for(int i = 0; i < cooksChosen.size; i++)
 		{
 			if(cnode.next != null)
 			{
@@ -86,7 +90,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Assistants: ");
-		for(int i = 0; i < numAssistants; i++)
+		for(int i = 0; i < assistantsChosen.size; i++)
 		{
 			if(anode.next != null)
 			{
@@ -100,7 +104,7 @@ public class Executable extends LinkedList<StaffMember>
 	// COMPLETE!
 	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int listLength, int requiredStaff) {
 		Node temp = list.getHead();
-		if (isPreferred(s, temp.element)) {
+		if (isPreferred(s, temp.element) && listLength <= requiredStaff) {
 			while (temp.next != null && isPreferred(s, temp.next.element)) {
 				temp = temp.next;
 			}
@@ -119,7 +123,6 @@ public class Executable extends LinkedList<StaffMember>
 				s = temp.next.element; 
 			}
 		}
-		
 	}
 
 	// COMPLETE!

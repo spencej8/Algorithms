@@ -12,7 +12,7 @@ public class TestData
 		String[] inPosition3 = { StaffMember.COOK };
 		String[] inLocations = { "Oxford" };
 		Date timeSlot = new Date();
-		Date[] inTimeSlots = { new Date(), timeSlot };
+		Date[] inTimeSlots = { timeSlot };
 		//Easy 4 person test
 		StaffMember[] inTestStaff = { new StaffMember(10, inPosition, inLocations, inTimeSlots, false, 0, false, 50, 5), 
 				new StaffMember(10, inPosition1, inLocations, inTimeSlots, false, 0, false, 50000, 5), 
