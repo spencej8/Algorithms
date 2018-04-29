@@ -3,7 +3,9 @@ public class Executable extends LinkedList<StaffMember>
 	public static final double RATE = 7, EXP = 5, SKIP = 3;
 	public LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
 	public static void main(String[] args) {
-		// Implement here.
+		Executable main = new Executable();
+		TestData data = new TestData();
+		main.getEventStaff(data.testEvent, data.testStaff);
 	}
 
 	//COMPLETE!
@@ -44,6 +46,7 @@ public class Executable extends LinkedList<StaffMember>
 				}
 			}
 		}
+		System.out.println("Done");
 	}
 
 	// COMPLETE!
