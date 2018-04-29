@@ -30,25 +30,21 @@ public class Executable extends LinkedList<StaffMember>
 					if(employee.getPosition(StaffMember.WAITER))
 					{
 						insertMember(waitersChosen, employee, waitersChosen.size, e.getNumOfServersNeeded());
-						System.out.println(employee.getEmployeeID());
 						waitersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.BARTENDER))
 					{
 						this.insertMember(bartendersChosen, employee, bartendersChosen.size, e.getNumOfBartendersNeeded());
-						System.out.println(employee.getEmployeeID());
 						bartendersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.COOK))
 					{
 						this.insertMember(cooksChosen, employee, cooksChosen.size, e.getNumOfCooksNeeded());
-						System.out.println(employee.getEmployeeID());
 						cooksChosen.size++;
 					}
 					else
 					{
 						this.insertMember(assistantsChosen, employee, assistantsChosen.size, e.getNumOfServerAssistantsNeeded());
-						System.out.println(employee.getEmployeeID());
 						assistantsChosen.size++;
 					}
 				}
