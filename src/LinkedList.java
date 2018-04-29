@@ -1,7 +1,7 @@
 public class LinkedList<E> {
 
     public Node head;
-    public int size;
+    public int size = 0;
 
     public LinkedList() {
         head = null;
@@ -29,6 +29,18 @@ public class LinkedList<E> {
     public void removeHead() {
         head = head.next;
         size--;
+    }
+    
+    public String toString( ) {
+    	String listRepresentation = "";
+        Node currentNode = head;
+
+        while (currentNode != null) {
+            listRepresentation += currentNode.element + "\n";
+            currentNode = currentNode.next;
+        }
+
+        return listRepresentation;
     }
     
 
