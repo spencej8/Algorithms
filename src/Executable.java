@@ -6,10 +6,6 @@ public class Executable extends LinkedList<StaffMember>
 	LinkedList<StaffMember> bartendersChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> cooksChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> assistantsChosen = new LinkedList<StaffMember>();
-	static int numWaiters = 0;
-	static int numBartenders = 0;
-	static int numCooks = 0;
-	static int numAssistants = 0;
 	
 	public static void main(String[] args) {
 		Executable main = new Executable();
@@ -65,9 +61,12 @@ public class Executable extends LinkedList<StaffMember>
 	// COMPLETE!
 	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int listLength, int requiredStaff) {
 		Node temp = list.getHead();
-		if (isPreferred(s, temp.element) && listLength <= requiredStaff) {
+		if (isPreferred(s, temp.element)) {
 			while (temp.next != null && isPreferred(s, temp.next.element)) {
 				temp = temp.next;
+			}
+			if(listLength > requiredStaff) {
+				list.removeHead();
 			}
 		}
 	}
