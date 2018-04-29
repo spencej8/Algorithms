@@ -2,6 +2,15 @@ public class Executable extends LinkedList<StaffMember>
 {
 	public static final double RATE = 7, EXP = 5, SKIP = 3;
 	public LinkedList<StaffMember> staffList = new LinkedList<StaffMember>();
+	LinkedList<StaffMember> waitersChosen = new LinkedList<StaffMember>();
+	LinkedList<StaffMember> bartendersChosen = new LinkedList<StaffMember>();
+	LinkedList<StaffMember> cooksChosen = new LinkedList<StaffMember>();
+	LinkedList<StaffMember> assistantsChosen = new LinkedList<StaffMember>();
+	static int numWaiters = 0;
+	static int numBartenders = 0;
+	static int numCooks = 0;
+	static int numAssistants = 0;
+	
 	public static void main(String[] args) {
 		Executable main = new Executable();
 		TestData data = new TestData();
@@ -10,13 +19,9 @@ public class Executable extends LinkedList<StaffMember>
 
 	//COMPLETE!
 	public void getEventStaff(Event e, StaffMember[] staffList) { 
-		LinkedList<StaffMember> waitersChosen = new LinkedList<StaffMember>();
 		waitersChosen.addToHead(new StaffMember());
-		LinkedList<StaffMember> bartendersChosen = new LinkedList<StaffMember>();
 		bartendersChosen.addToHead(new StaffMember());
-		LinkedList<StaffMember> cooksChosen = new LinkedList<StaffMember>();
 		cooksChosen.addToHead(new StaffMember());
-		LinkedList<StaffMember> assistantsChosen = new LinkedList<StaffMember>();
 		assistantsChosen.addToHead(new StaffMember());
 		
 		for(StaffMember employee : staffList)
@@ -30,18 +35,22 @@ public class Executable extends LinkedList<StaffMember>
 					if(employee.getPosition(StaffMember.WAITER))
 					{
 						insertMember(waitersChosen, employee, waitersChosen.size, e.getNumOfServersNeeded());
+						numWaiters++;
 					}
 					else if(employee.getPosition(StaffMember.BARTENDER))
 					{
 						this.insertMember(bartendersChosen, employee, bartendersChosen.size, e.getNumOfBartendersNeeded());
+						numBartenders++;
 					}
 					else if(employee.getPosition(StaffMember.COOK))
 					{
 						this.insertMember(cooksChosen, employee, cooksChosen.size, e.getNumOfCooksNeeded());
+						numCooks++;
 					}
 					else
 					{
 						this.insertMember(assistantsChosen, employee, assistantsChosen.size, e.getNumOfServerAssistantsNeeded());
+						numAssistants++;
 					}
 				}
 			}
