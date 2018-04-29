@@ -16,7 +16,7 @@ public class Executable extends LinkedList<StaffMember>
 		main.getEventStaff(data.testEvent, data.testStaff);
 	}
 
-	//COMPLETE!
+	//Adds all necessary event staff
 	public void getEventStaff(Event e, StaffMember[] staffList) { 
 		waitersChosen.addToHead(new StaffMember());
 		bartendersChosen.addToHead(new StaffMember());
@@ -101,7 +101,7 @@ public class Executable extends LinkedList<StaffMember>
 		System.out.println("Done");
 	}
 
-	// COMPLETE!
+	// Insert a single staff member into a list of staff members
 	public void insertMember(LinkedList<StaffMember> list, StaffMember s, int listLength, int requiredStaff) {
 		Node temp = list.getHead();
 		if (isPreferred(s, temp.element) && listLength <= requiredStaff) {
@@ -125,14 +125,14 @@ public class Executable extends LinkedList<StaffMember>
 		}
 	}
 
-	// COMPLETE!
+	// Calculate the weight of the given staff member
 	public double calculateWeight(StaffMember s, double rateValue, double expValue, double skipValue) {
 		double newWeight = (s.getRating() * rateValue) + (s.getExperience() * expValue) + (s.getConsecutiveSkips() * skipValue);
 		s.setWeight(newWeight);
 		return s.getWeight();
 	}
 	
-	// COMPLETE!
+	// Check availability of passed in staff member
 	public boolean isAvailable(Event e, StaffMember s) {
 		if (!s.getIsSuspended()) {
 			if (s.getAvailableTimeSlots(e.getTimeOfEvent()) == true) {
@@ -148,7 +148,7 @@ public class Executable extends LinkedList<StaffMember>
 			return false;
 	}
 
-	// COMPLETE!
+	// Check to see if given staff member a is more heavily weighted than member b
 	public boolean isPreferred(StaffMember a, StaffMember b) {
 		if (a.getWeight() > b.getWeight())
 			return true;
@@ -164,7 +164,7 @@ public class Executable extends LinkedList<StaffMember>
 			return false;	
 	}
 
-	// COMPLETE!
+	// Random bool generator
 	public boolean getRandom() {
 		int temp = (int)(Math.random() * 2 + 1);
 		if (temp == 1)
