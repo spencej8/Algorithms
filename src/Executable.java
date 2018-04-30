@@ -87,7 +87,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Done");
-
+		System.out.println(waitersChosen.toString());
 	}
 
 	// Insert a single staff member into a list of staff members
@@ -109,7 +109,7 @@ public class Executable extends LinkedList<StaffMember>
 				temp.next = toAdd;
 				list.size++;
 			}
-			if (list.size > requiredStaff + 1) {
+			if (list.size > requiredStaff) {
 				list.removeHead();
 				list.size--;
 			}
