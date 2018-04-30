@@ -30,22 +30,18 @@ public class Executable extends LinkedList<StaffMember>
 					if(employee.getPosition(StaffMember.WAITER))
 					{
 						insertMember(waitersChosen, employee, waitersChosen.size, e.getNumOfServersNeeded());
-						waitersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.BARTENDER))
 					{
 						this.insertMember(bartendersChosen, employee, bartendersChosen.size, e.getNumOfBartendersNeeded());
-						bartendersChosen.size++;
 					}
 					else if(employee.getPosition(StaffMember.COOK))
 					{
 						this.insertMember(cooksChosen, employee, cooksChosen.size, e.getNumOfCooksNeeded());
-						cooksChosen.size++;
 					}
 					else
 					{
 						this.insertMember(assistantsChosen, employee, assistantsChosen.size, e.getNumOfServerAssistantsNeeded());
-						assistantsChosen.size++;
 					}
 				}
 			}
@@ -91,6 +87,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Done");
+
 	}
 
 	// Insert a single staff member into a list of staff members
@@ -100,24 +97,21 @@ public class Executable extends LinkedList<StaffMember>
 			while (temp.next != null && isPreferred(s, temp.next.element)) {
 				temp = temp.next;
 			}
-
-			if(listLength > requiredStaff) {
-				list.removeHead();
-
 			if(temp.next != null)
 			{
 				Node toAdd = new Node(s, temp.next);
 				temp.next = toAdd;
+				list.size++;
 			}
 			else
 			{
 				Node toAdd = new Node(s, null);
 				temp.next = toAdd;
+				list.size++;
 			}
-			//need to increment in getEventStaff
-			if (list.getSize() < listLength) {
-				s = temp.next.element; 
-			}
+			if (list.size > requiredStaff) {
+				list.removeHead();
+				list.size--;
 			}
 		}
 	}

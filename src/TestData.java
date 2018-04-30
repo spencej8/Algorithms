@@ -25,9 +25,9 @@ public class TestData
 		//4 of each position needed, 5 of each position in list
 		StaffMember[] testStaff2 = { new StaffMember(5, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 50, 5),
-				new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 5000, 5),
-				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 50000, 5),
+				new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 501, 5),
+				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 25, 5),
+				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(6, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(16, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(26, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
@@ -44,7 +44,30 @@ public class TestData
 				new StaffMember(38, inPosition3, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(48, inPosition3, inLocations, inTimeSlots, true, 0, false, 5, 5)};
 		
+		//5 person test
+		//0 people needed
+		StaffMember[] testStaff3 = { new StaffMember(1, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+				new StaffMember(2, inPosition1, inLocations, inTimeSlots, true, 0, false, 50, 5),
+				new StaffMember(3, inPosition2, inLocations, inTimeSlots, true, 0, false, 501, 5),
+				new StaffMember(4, inPosition3, inLocations, inTimeSlots, true, 0, false, 25, 5),
+				new StaffMember(5, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5)};
+		
+		//10 person test
+		//need ten waiters
+		//all different weights
+		StaffMember[] testStaff4 = { new StaffMember(5, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+		new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 50, 5),
+		new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 501, 5),
+		new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 25, 5),
+		new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+		new StaffMember(6, inPosition, inLocations, inTimeSlots, true, 0, false, 3, 5),
+		new StaffMember(16, inPosition, inLocations, inTimeSlots, true, 0, false, 435, 5),
+		new StaffMember(26, inPosition, inLocations, inTimeSlots, true, 0, false, 7, 5),
+		new StaffMember(36, inPosition, inLocations, inTimeSlots, true, 0, false, 52, 5),
+		new StaffMember(46, inPosition, inLocations, inTimeSlots, true, 0, false, 1, 5)};
+		
 		testStaff = testStaff2;
-		testEvent = new Event(timeSlot, "Oxford", 4, 4, 4, 4);
+		testEvent = new Event(timeSlot, "Oxford", 0, 10, 0, 0);
+		
 	}
 }
