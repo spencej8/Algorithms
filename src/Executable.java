@@ -75,6 +75,7 @@ public class Executable extends LinkedList<StaffMember>
 				temp.next = toAdd;
 				list.size++;
 			}
+			//remove lowest ranked member if adding member more than needed. 
 			if (list.size > requiredStaff) {
 				list.removeHead();
 			}

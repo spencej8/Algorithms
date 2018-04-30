@@ -36,8 +36,11 @@ public class LinkedList<E> {
         Node currentNode = head;
 
         while (currentNode != null) {
-            listRepresentation += "ID: " + currentNode.element.getEmployeeID() + "\n";
-            listRepresentation += "Weight: " + currentNode.element.getWeight() + "\n";
+            listRepresentation += "ID: " + currentNode.element.getEmployeeID() + ", ";
+            listRepresentation += "Requested: " + currentNode.element.getRequestedEvent() +", ";
+            listRepresentation += "Rating: " + currentNode.element.getRating() +", ";
+            listRepresentation += "Experience: " + currentNode.element.getExperience() +", ";
+            listRepresentation += "Weight: " + currentNode.element.getWeight() +"\n";
 
             currentNode = currentNode.next;
         }
