@@ -46,48 +46,14 @@ public class Executable extends LinkedList<StaffMember>
 				}
 			}
 		}
-		Node wnode = waitersChosen.getHead();
-		Node bnode = bartendersChosen.getHead();
-		Node cnode = cooksChosen.getHead();
-		Node anode = assistantsChosen.getHead();
-		System.out.println("Waiters: ");
-		for(int i = 0; i < waitersChosen.size; i++)
-		{
-			if(wnode.next != null)
-			{
-				System.out.println(wnode.next.element);
-				wnode = wnode.next;
-			}
-		}
-		System.out.println("Bartenders: ");
-		for(int i = 0; i < bartendersChosen.size; i++)
-		{
-			if(bnode.next != null)
-			{
-				System.out.println(bnode.next.element);
-				bnode = bnode.next;
-			}
-		}
-		System.out.println("Cooks: ");
-		for(int i = 0; i < cooksChosen.size; i++)
-		{
-			if(cnode.next != null)
-			{
-				System.out.println(cnode.next.element);
-				cnode = cnode.next;
-			}
-		}
-		System.out.println("Assistants: ");
-		for(int i = 0; i < assistantsChosen.size; i++)
-		{
-			if(anode.next != null)
-			{
-				System.out.println(anode.next.element);
-				anode = anode.next;
-			}
-		}
-		System.out.println("Done");
-		System.out.println(waitersChosen.toString());
+		System.out.println("WAITERS");
+		System.out.println(waitersChosen.toString() + "\n");
+		System.out.println("BARTENDERS");
+		System.out.println(bartendersChosen.toString()+ "\n");
+		System.out.println("COOKS");
+		System.out.println(cooksChosen.toString()+ "\n");
+		System.out.println("ASSISTANTS");
+		System.out.println(assistantsChosen.toString()+ "\n");
 	}
 
 	// Insert a single staff member into a list of staff members
@@ -111,7 +77,6 @@ public class Executable extends LinkedList<StaffMember>
 			}
 			if (list.size > requiredStaff) {
 				list.removeHead();
-				list.size--;
 			}
 		}
 	}
