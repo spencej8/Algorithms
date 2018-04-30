@@ -27,7 +27,7 @@ public class TestData
 				new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 50, 5),
 				new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 501, 5),
 				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 25, 5),
-				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
+				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 10, 5),
 				new StaffMember(6, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(16, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
 				new StaffMember(26, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5),
@@ -67,7 +67,7 @@ public class TestData
 		new StaffMember(46, inPosition, inLocations, inTimeSlots, true, 0, false, 1, 5)};
 		
 		testStaff = testStaff2;
-		testEvent = new Event(timeSlot, "Oxford", 0, 10, 0, 0);
+		testEvent = new Event(timeSlot, "Oxford", 3, 3, 3, 3);
 		
 	}
 }

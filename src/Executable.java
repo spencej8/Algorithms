@@ -87,7 +87,7 @@ public class Executable extends LinkedList<StaffMember>
 			}
 		}
 		System.out.println("Done");
-
+		System.out.println(waitersChosen.toString());
 	}
 
 	// Insert a single staff member into a list of staff members
