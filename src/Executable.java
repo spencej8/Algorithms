@@ -109,7 +109,7 @@ public class Executable extends LinkedList<StaffMember>
 				temp.next = toAdd;
 				list.size++;
 			}
-			if (list.size > requiredStaff) {
+			if (list.size > requiredStaff + 1) {
 				list.removeHead();
 				list.size--;
 			}

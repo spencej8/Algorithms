@@ -66,8 +66,8 @@ public class TestData
 		new StaffMember(36, inPosition, inLocations, inTimeSlots, true, 0, false, 52, 5),
 		new StaffMember(46, inPosition, inLocations, inTimeSlots, true, 0, false, 1, 5)};
 		
-		testStaff = testStaff2;
-		testEvent = new Event(timeSlot, "Oxford", 0, 10, 0, 0);
+		testStaff = testStaff4;
+		testEvent = new Event(timeSlot, "Oxford", 2, 9, 2, 2);
 		
 	}
 }
