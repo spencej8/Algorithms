@@ -4,74 +4,74 @@ public class TestData
 {
 	public StaffMember[] testStaff;
 	public Event testEvent;
+	Date timeSlot = new Date();
+	Date timeSlot2 = new Date();
+	Date timeSlot3 = new Date();
+	Date timeSlot4 = new Date();
 	public TestData()
 	{
-		String[] inPosition = { StaffMember.WAITER };
-		String[] inPosition1 = { StaffMember.BARTENDER };
-		String[] inPosition2 = { StaffMember.ASSISTANT };
-		String[] inPosition3 = { StaffMember.COOK };
-		String[] inLocations = { "Oxford" };
-		Date timeSlot = new Date();
-		Date[] inTimeSlots = { timeSlot };
-		//Easy 4 person test
-		StaffMember[] inTestStaff = { new StaffMember(10, inPosition, inLocations, inTimeSlots, false, 0, false, 50, 5), 
-				new StaffMember(10, inPosition1, inLocations, inTimeSlots, false, 0, false, 50000, 5), 
-				new StaffMember(10, inPosition2, inLocations, inTimeSlots, false, 0, false, 5000, 5),
-				new StaffMember(10, inPosition3, inLocations, inTimeSlots, false, 0, false, 500, 5)};
-		
-		//20 person test
-		//16 people needed
-		//all 20 requested and available
-		//4 of each position needed, 5 of each position in list
-		StaffMember[] testStaff2 = { new StaffMember(5, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 1, 5),
-				new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 3, 4),
-				new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 4, 1),
-				new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 4, 2),
-				new StaffMember(6, inPosition1, inLocations, inTimeSlots, true, 0, false, 2, 5),
-				new StaffMember(16, inPosition1, inLocations, inTimeSlots, true, 0, false, 3, 2),
-				new StaffMember(26, inPosition1, inLocations, inTimeSlots, true, 0, false, 3, 4),
-				new StaffMember(36, inPosition1, inLocations, inTimeSlots, true, 0, false, 4, 2),
-				new StaffMember(46, inPosition1, inLocations, inTimeSlots, true, 0, false, 1, 1),
-				new StaffMember(7, inPosition2, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(17, inPosition2, inLocations, inTimeSlots, true, 0, false, 5, 3),
-				new StaffMember(27, inPosition2, inLocations, inTimeSlots, true, 0, false, 3, 3),
-				new StaffMember(37, inPosition2, inLocations, inTimeSlots, true, 0, false, 2, 2),
-				new StaffMember(47, inPosition2, inLocations, inTimeSlots, true, 0, false, 3, 3),
-				new StaffMember(8, inPosition3, inLocations, inTimeSlots, true, 0, false, 3, 4),
-				new StaffMember(18, inPosition3, inLocations, inTimeSlots, true, 0, false, 4, 5),
-				new StaffMember(28, inPosition3, inLocations, inTimeSlots, true, 0, false, 2, 5),
-				new StaffMember(38, inPosition3, inLocations, inTimeSlots, true, 0, false, 4, 1),
-				new StaffMember(48, inPosition3, inLocations, inTimeSlots, true, 0, false, 1, 5)};
-		
-		//5 person test
-		//0 people needed
-		StaffMember[] testStaff3 = { new StaffMember(1, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-				new StaffMember(2, inPosition1, inLocations, inTimeSlots, true, 0, false, 50, 5),
-				new StaffMember(3, inPosition2, inLocations, inTimeSlots, true, 0, false, 501, 5),
-				new StaffMember(4, inPosition3, inLocations, inTimeSlots, true, 0, false, 25, 5),
-				new StaffMember(5, inPosition1, inLocations, inTimeSlots, true, 0, false, 5, 5)};
-		
-		//10 person test
-		//need ten waiters
-		//all different weights
-		StaffMember[] testStaff4 = { new StaffMember(5, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-		new StaffMember(15, inPosition, inLocations, inTimeSlots, true, 0, false, 50, 5),
-		new StaffMember(25, inPosition, inLocations, inTimeSlots, true, 0, false, 501, 5),
-		new StaffMember(35, inPosition, inLocations, inTimeSlots, true, 0, false, 25, 5),
-		new StaffMember(45, inPosition, inLocations, inTimeSlots, true, 0, false, 5, 5),
-		new StaffMember(6, inPosition, inLocations, inTimeSlots, true, 0, false, 3, 5),
-		new StaffMember(16, inPosition, inLocations, inTimeSlots, true, 0, false, 435, 5),
-		new StaffMember(26, inPosition, inLocations, inTimeSlots, true, 0, false, 7, 5),
-		new StaffMember(36, inPosition, inLocations, inTimeSlots, true, 0, false, 52, 5),
-		new StaffMember(46, inPosition, inLocations, inTimeSlots, true, 0, false, 1, 5)};
-		
-		testStaff = testStaff2;
-<<<<<<< HEAD
+		employeeGenerator(500);
 		testEvent = new Event(timeSlot, "Oxford", 4, 4, 4, 4);
 		
-=======
-		testEvent = new Event(timeSlot, "Oxford", 3, 3, 3, 3);	
->>>>>>> branch 'master' of https://github.com/spencej8/Algorithms.git
 	}
+	
+	public void employeeGenerator(int numWanted) {
+		StaffMember[] list = new StaffMember[numWanted];
+		for(int i = 0; i < numWanted; i++) {
+			list[i] = new StaffMember(i, getPositions(), getLocations(), getTimeSlots(), true, getNumSkips(), false, getRating(), getExperience());
+		}
+		testStaff = list;
+	}
+	
+	public String[] getPositions() {
+		String[] positions = { "Waiter", "Bartender", "Cook", "Assistant" };
+		int numPositions = 1 + (int)(Math.random() * ((4-1) + 1));
+		String[] result = new String[numPositions];
+		for(int i = 0; i < numPositions; i++) {
+			int position = 1 + (int)(Math.random() * ((numPositions-1) + 1));
+			result[i] = positions[position-1];
+		}
+		return result;
+	}
+	
+	public String[] getLocations() {
+		String[] locations = { "Oxford", "Cincinnatti", "Cleveland", "Columbus" };
+		int numLocations = 1 + (int)(Math.random() * ((4-1) + 1));
+		String[] result = new String[numLocations];
+		for(int i = 0; i < numLocations; i++) {
+			int location = 1 + (int)(Math.random() * ((numLocations-1) + 1));
+			result[i] = locations[location-1];
+		}
+		return result;
+	}
+	
+	public Date[] getTimeSlots() {
+		Date[] timeSlots = {timeSlot, timeSlot2, timeSlot3, timeSlot4};
+		int numTimeSlots = 1 + (int)(Math.random() * ((4-1) + 1));
+		Date[] result = new Date[numTimeSlots];
+		for(int i = 0; i < numTimeSlots; i++) {
+			int timeSlot = 1 + (int)(Math.random() * ((numTimeSlots-1) + 1));
+			result[i] = timeSlots[timeSlot-1];
+		}
+		return result;
+	}
+	
+	public int getNumSkips() {
+		int numSkips = 1 + (int)(Math.random() * ((10-1) + 1));
+		return numSkips;
+	}
+	
+	public int getRating() {
+		int rating = 1 + (int)(Math.random() * ((5-1) + 1));
+		return rating;
+	}
+	
+	public int getExperience() {
+		int experience = 1 + (int)(Math.random() * ((5-1) + 1));
+		return experience;
+	}
+	
+	
+	
+	
 }
