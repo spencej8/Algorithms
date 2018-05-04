@@ -1,6 +1,6 @@
 public class Executable extends LinkedList<StaffMember>
 {
-	public static final double RATE = 7, EXP = 5, SKIP = 3;
+	public static final double RATE = 7, EXP = 5, SKIP = 3; // These are arbitrary numbers
 	LinkedList<StaffMember> waitersChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> bartendersChosen = new LinkedList<StaffMember>();
 	LinkedList<StaffMember> cooksChosen = new LinkedList<StaffMember>();
@@ -23,7 +23,6 @@ public class Executable extends LinkedList<StaffMember>
 		{
 			if(!employee.getIsSuspended())
 			{
-				//TODO: Replace constants with inputed weights
 				calculateWeight(employee, RATE, EXP, SKIP);
 				if(employee.getRequestedEvent() || isAvailable(e, employee))
 				{
